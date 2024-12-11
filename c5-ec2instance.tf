@@ -1,10 +1,11 @@
 # Resource: EC2 Instance
 resource "aws_instance" "myec2" {
-  ami = data.aws_ami.amzlinux2.id
+  for_each = toset(var.ami_id)
+  ami = each.value
   instance_type = var.instance_type
   user_data = file("${path.module}/app-install.sh")
   tags = {
-    Name = "EC2 Demo"
+    Name = "EC2 OpenSuse"
     Region = "us-east-1",
     Change = "new state"
   }

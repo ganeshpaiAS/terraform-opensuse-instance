@@ -1,10 +1,10 @@
 # Get latest AMI ID for Amazon Linux2 OS
-data "aws_ami" "amzlinux2" {
-  most_recent      = true
+data "aws_ami" "amazlinux" {
+  most_recent = true
   owners           = ["amazon"]
   filter {
     name   = "name"
-    values = ["amzn2-ami-hvm-*-gp2"]
+    values = ["suse-sles-15-sp6-*-hvm-ssd-x86_64"]
   }
   filter {
     name   = "root-device-type"

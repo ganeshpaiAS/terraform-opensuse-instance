@@ -1,2 +1,5 @@
 # Folders
 .terraform
+# Files
+terraform.tf*
+.terraform.lock.hcl
